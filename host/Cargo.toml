@@ -11,3 +11,4 @@ serde = "1.0"
 bitcoin = { version = "0.31.1", features = ["serde"] }
 bitcoincore-rpc = "0.18.0"
 bitcoin-spv = "5.0.0"
+hex = "0.4.3"

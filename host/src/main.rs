@@ -21,10 +21,11 @@ fn main() {
         for height in begin..=end {
             let header = client
                 .get_block_hash(height)
-                .and_then(|hash| client.get_block_header(&hash))
+                .and_then(|hash| client.get_block_hex(&hash))
                 .unwrap();
-            println!("{}", header.block_hash());
-            input.extend(serialize(&header));
+            let aa = hex::decode(&header).unwrap();
+            println!("{}", aa.len());
+            input.extend_from_slice(&aa[..80]);
         }
         input
     };
